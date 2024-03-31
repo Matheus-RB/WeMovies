@@ -1,33 +1,41 @@
+import useSWR from "swr";
+
 import * as S from "./styles";
-import { MovieCard } from "../../components/MovieCard/MovieCard";
-import { useEffect, useState } from "react";
-import data from "../../data.json";
+
+import { Anything, MovieCard } from "~/components";
 
 interface Data {
-  id: number;
-  title: string;
-  price: number;
-  image: string;
+  products: {
+    id: number;
+    title: string;
+    price: number;
+    image: string;
+  }[];
 }
 
 const Home = () => {
-  const [dataList, setDataList] = useState<Data[]>([]);
-
-  useEffect(() => {
-    setDataList(data);
-  }, []);
+  const { data } = useSWR<Data>("https://wefit-movies.vercel.app/api/movies", {
+    suspense: true,
+  });
 
   return (
     <S.Container>
-      {dataList &&
-        dataList.map((item) => (
-          <MovieCard
-            key={item.id}
-            image={item.image}
-            price={item.price}
-            title={item.title}
-          />
-        ))}
+      {data && data?.products.length > 0 ? (
+        <S.Content>
+          {data &&
+            data.products.map((item) => (
+              <MovieCard
+                id={item.id}
+                key={item.id}
+                image={item.image}
+                price={item.price}
+                title={item.title}
+              />
+            ))}
+        </S.Content>
+      ) : (
+        <Anything />
+      )}
     </S.Container>
   );
 };

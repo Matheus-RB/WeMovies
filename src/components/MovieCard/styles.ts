@@ -1,13 +1,20 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
+interface ButtonProps {
+  quantityInCart: number;
+}
 
 export const Container = styled.div`
   background-color: #ffffff;
   max-height: 292px;
   max-width: 306.67px;
-  width: 306.67px;
   height: 292px;
   border-radius: 4px;
   padding: 16px;
+
+  @media screen and (max-width: 550px) {
+    max-width: none;
+  }
 `;
 
 export const SubContainer = styled.div`
@@ -36,15 +43,41 @@ export const Price = styled.span`
   text-align: center;
 `;
 
-export const Button = styled.button`
+export const Button = styled.button<ButtonProps>`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
   border-radius: 4px;
-  width: auto;
-  height: Fixed 40px;
-  font-weight: 700;
+  width: 100%;
+  height: 40px;
   font-size: 12px;
-  line-height: 16.34px;
+  font-weight: 700;
   color: #ffffff;
-  background-color: #009edd;
   text-transform: uppercase;
   border: none;
+  background-color: #009edd;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #1fbbf9;
+  }
+
+  ${(props) =>
+    props.quantityInCart > 0 &&
+    css`
+      background-color: #039b00;
+
+      &:hover {
+        background-color: #09b106;
+      }
+    `}
+`;
+
+export const QuantityVan = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  line-height: 16.34px;
 `;

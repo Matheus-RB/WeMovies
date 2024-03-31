@@ -1,2 +1,5 @@
 export * from "./MovieCard/MovieCard.tsx"
 export * from "./Layout/Layout"
+export * from "./Anything/Anything.tsx"
+export * from "./Loader/Loader.tsx"
+export * from "./EmptyCart/EmptyCart.tsx"

@@ -1,30 +1,66 @@
-# React + TypeScript + Vite
+# Como Clonar e Iniciar um Projeto React usando npm ou Yarn
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aqui está um guia simples para você começar a desenvolver um projeto React rapidamente. Vamos clonar um projeto existente e iniciá-lo usando npm ou Yarn.
 
-Currently, two official plugins are available:
+## Pré-requisitos
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Antes de começar, certifique-se de ter o Node.js instalado em sua máquina. Você pode baixá-lo e instalá-lo no [site oficial do Node.js](https://nodejs.org/).
 
-## Expanding the ESLint configuration
+## Clonando o Projeto
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. Abra o terminal e navegue até o diretório onde você deseja colocar o projeto.
 
-- Configure the top-level `parserOptions` property like this:
+2. Use o comando abaixo para clonar o projeto. Substitua `<URL_DO_REPOSITORIO>` pela URL do repositório do projeto que você deseja clonar e `<NOME_DO_PROJETO>` pelo nome que você deseja dar ao diretório do projeto.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+   ```bash
+   git clone https://github.com/Matheus-RB/WeMovies
+   ```
+
+## Iniciando o Projeto com npm
+
+Se você prefere usar npm, siga estas etapas:
+
+1. **Vá para o diretório do projeto clonado.**
+
+```
+cd WeMovies
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+2. **Instale as dependências do projeto.**
+
+```
+npm install
+```
+
+3. **Inicie o servidor de desenvolvimento.**
+
+```
+npm run dev
+```
+
+## Iniciando o Projeto com yarn
+
+Se você prefere usar Yarn, siga estas etapas:
+
+1. **Vá para o diretório do projeto clonado.**
+
+```
+cd WeMovies
+```
+
+2. **Instale as dependências do projeto.**
+
+```
+yarn install
+```
+
+3. **Inicie o servidor de desenvolvimento.**
+
+```
+yarn dev
+```
+
+Isso iniciará o servidor de desenvolvimento e abrirá o projeto no seu navegador padrão. Agora você pode começar a desenvolver seu aplicativo React.
+
+## Conclusão
+Agora você clonou e iniciou com sucesso um projeto React usando npm ou Yarn. Você pode começar a desenvolver seu aplicativo React imediatamente. Boa codificação! 🚀
